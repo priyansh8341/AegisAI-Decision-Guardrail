@@ -1,0 +1,129 @@
+INFORMATION.TXT
+Project: AegisAI – Autonomous Decision Guardrail Agent
+
+==================================================
+1. PROJECT SUMMARY
+==================================================
+AegisAI is an AI-powered decision evaluation system that acts as a guardrail
+for organizations by analyzing proposed decisions and predicting risks before
+those decisions are executed.
+
+The system simulates the role of a Risk Officer, CTO, or Governance Committee.
+
+==================================================
+2. PROBLEM STATEMENT
+==================================================
+Organizations often make high-impact decisions without fully understanding
+second-order risks, operational fragility, or downstream consequences.
+
+AegisAI addresses this gap by providing structured, forward-looking risk
+analysis powered by an LLM.
+
+==================================================
+3. CORE CONCEPT
+==================================================
+Unlike traditional monitoring tools that report past events, AegisAI evaluates
+future risk by reasoning over context, constraints, and trade-offs.
+
+Key idea:
+Present → Possible Futures → Risk & Guardrails
+
+==================================================
+4. COMPLETE TECHNOLOGY STACK
+==================================================
+
+Backend:
+- Python 3
+- FastAPI
+- Uvicorn
+- Requests
+
+AI / Reasoning Layer:
+- Ollama (local LLM runtime)
+- LLaMA 3
+- Prompt-based reasoning agent
+
+Frontend:
+- HTML5
+- CSS3 (control-room style UI)
+- Vanilla JavaScript
+
+Architecture:
+- Agent-based design
+- Stateless reasoning with short-term memory
+- JSON-validated AI outputs
+- Human-in-the-loop decision workflow
+
+==================================================
+5. SYSTEM ARCHITECTURE
+==================================================
+
+Decision Proposal
+   ↓
+Risk Reasoning Agent (LLM)
+   ↓
+Risk Scoring & Classification
+   ↓
+Guardrails & Monitoring Signals
+   ↓
+Executive-Ready Output
+   ↓
+Web Control Panel
+
+==================================================
+6. KEY FEATURES
+==================================================
+- Risk level classification (LOW → CRITICAL)
+- Confidence-weighted risk scoring
+- Primary and second-order risk detection
+- Guardrail recommendations
+- Monitoring signals
+- 30-day scenario outlook
+- Decision recommendation (Approve / Revise / Block)
+
+==================================================
+7. WHY THIS PROJECT IS UNIQUE
+==================================================
+- Focuses on decision safety, not chat
+- Forward-looking risk prediction
+- Enterprise governance mindset
+- Structured, executive-ready output
+- Local LLM for privacy and control
+
+==================================================
+8. INTERVIEW QUESTIONS & ANSWERS
+==================================================
+
+Q: What does AegisAI do?
+A: It evaluates proposed decisions and predicts operational, financial, and
+reputational risks before execution.
+
+Q: How is this different from chatbots?
+A: Chatbots answer questions. AegisAI reasons about decisions and produces
+governance-grade risk assessments.
+
+Q: Why use an LLM?
+A: LLMs enable contextual reasoning across complex trade-offs without relying
+on static rules.
+
+Q: Is this production-ready?
+A: The architecture is production-ready; enterprise features like persistence,
+authentication, and integrations would be added for deployment.
+
+Q: What kind of decisions can it analyze?
+A: Technical, operational, compliance, financial, and organizational decisions.
+
+==================================================
+9. USE CASES
+==================================================
+- CTO decision reviews
+- Risk & compliance checks
+- Change management
+- Incident prevention
+- Executive decision support
+
+==================================================
+10. KEY TAKEAWAY FOR INTERVIEWERS
+==================================================
+AegisAI demonstrates how LLMs can be used as autonomous reasoning agents to
+protect decisions and reduce organizational risk.
