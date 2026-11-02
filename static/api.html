@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AegisAI — API reference</title><link rel="stylesheet" href="/static/styles.css?v=2.0.2"></head><body><main class="api-document"><a href="/" class="button secondary">← Back to workspace</a><div class="page-heading"><div><h1>AegisAI API reference<span>.</span></h1><p>A local API for decision assessments and recorded human reviews.</p></div></div><section class="card api-section"><h2>Endpoints</h2><dl><dt><code>GET /health</code></dt><dd>Application health and version.</dd><dt><code>GET /api/status</code></dt><dd>Configured Ollama model availability.</dd><dt><code>GET /api/samples</code></dt><dd>Available fixed examples and their matching briefs.</dd><dt><code>POST /api/assess</code></dt><dd>Validate a brief, generate or load its assessment, apply policy and save the record. Returns 201 on completion; 502 saves a failed attempt with no score. Invalid input returns 422 without creating a record.</dd><dt><code>GET /api/assessments</code></dt><dd>Latest 500 records and total saved count.</dd><dt><code>GET /api/assessments/{id}</code></dt><dd>A saved record, its provenance and review history.</dd><dt><code>POST /api/assessments/{id}/review</code></dt><dd>Append a review with action, reviewer, note and expected_version. A stale version or failed assessment returns 409.</dd><dt><code>GET /api/assessments/{id}/export/md</code></dt><dd>Download a Markdown report including review events.</dd><dt><code>GET /api/assessments/{id}/export/json</code></dt><dd>Download the structured record.</dd></dl><a class="button secondary" href="/openapi.json">Open complete JSON schema ↗</a></section><section class="card api-section"><h2>Example live request</h2><pre>POST /api/assess
+Content-Type: application/json
+
+{
+  "title": "Pilot an internal documentation refresh",
+  "decision": "Pilot the new internal portal with ten volunteers for two weeks.",
+  "constraints": "Retain the existing portal throughout the pilot.",
+  "owner": "Enablement team",
+  "category": "Operations",
+  "appetite": "Cautious",
+  "mode": "live",
+  "sample_id": null
+}</pre><p>For sample mode, use the exact brief returned by /api/samples and its sample_id. Edited sample briefs are rejected. API clients are responsible for submitting a trusted local request; the application blocks cross-origin browser writes.</p></section></main></body></html>
