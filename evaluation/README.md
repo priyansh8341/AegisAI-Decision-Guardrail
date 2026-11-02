@@ -35,7 +35,7 @@ python evaluate.py --check --split all
 .venv/Scripts/python.exe evaluate.py --split heldout
 ```
 
-The check command uses only Python's standard library. Live runs require the app's requirements and Ollama. Use the same setup from TRANSFER_SETUP.md. The default model is llama3.2:3b; configure AEGIS_MODEL and AEGIS_OLLAMA_URL before launching. Each request can take up to the adapter's 180-second read timeout. Thirty CPU requests may take a long time. Use Ctrl+C to stop; each completed result is checkpointed and an interrupted run gets a partial summary. An unreachable model stops the run early and reports unattempted cases. No automatic retries or fabricated successful results are used.
+The check command uses only Python's standard library. Live runs require the app's requirements and Ollama. Use the setup in [START_HERE.md](../START_HERE.md). The default model is llama3.2:3b; configure AEGIS_MODEL and AEGIS_OLLAMA_URL before launching. Each request can take up to the adapter's 180-second read timeout. Thirty CPU requests may take a long time. Use Ctrl+C to stop; each completed result is checkpointed and an interrupted run gets a partial summary. An unreachable model stops the run early and reports unattempted cases. No automatic retries or fabricated successful results are used.
 
 Each run creates an independent timestamped directory in evaluation/runs with metadata, a case snapshot, raw results, summary, report and blank human-review CSV. The app database is never imported or modified. Raw generated text is retained only when it passes the app's output schema; rejected output has an error category, not raw model text. Keep run directories private when evaluating your own briefs.
 
